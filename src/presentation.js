@@ -4,6 +4,7 @@ import React from 'react';
 // Import Spectacle Core tags
 import {
   BlockQuote,
+  Notes,
   Cite,
   Deck,
   Heading,
@@ -12,6 +13,8 @@ import {
   Quote,
   Slide,
   Text,
+  MarkdownSlides,
+  Magic,
 } from 'spectacle';
 
 // Import theme
@@ -30,7 +33,7 @@ const theme = createTheme(
   {
     primary: 'Montserrat',
     secondary: 'Helvetica',
-  }
+  },
 );
 
 export default class Presentation extends React.Component {
@@ -41,53 +44,117 @@ export default class Presentation extends React.Component {
         transitionDuration={500}
         theme={theme}
       >
-        <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
-          </Heading>
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            open the presentation/index.js file to get started
-          </Text>
+        <Slide>
+          <Heading size={1}>What are hooks?</Heading>
         </Slide>
-        <Slide transition={['fade']} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>
-            Typography
-          </Heading>
-          <Heading size={1} textColor="secondary">
-            Heading 1
-          </Heading>
-          <Heading size={2} textColor="secondary">
-            Heading 2
-          </Heading>
-          <Heading size={3} textColor="secondary">
-            Heading 3
-          </Heading>
-          <Heading size={4} textColor="secondary">
-            Heading 4
-          </Heading>
-          <Heading size={5} textColor="secondary">
-            Heading 5
-          </Heading>
-          <Text size={6} textColor="secondary">
-            Standard text
-          </Text>
+        <Slide>
+          <Notes>
+            Hooks are an API for using state, and other features without writing
+            a clas in React
+          </Notes>
+          <Heading size={1}>What are hooks?</Heading>
+          <div>New React APIs</div>
         </Slide>
-        <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Standard List
-          </Heading>
+        <Slide>
+          <Notes>
+            <h4>Code reuse</h4>
+
+            <ul>
+              <li>
+                <p>
+                  It is really hard to share code between components when state
+                  is involved.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  We’ve used multiple workarounds in the past, like HOCs or
+                  using global state (Redux)
+                </p>
+              </li>
+            </ul>
+
+            <h4>React Lifecycle is hard to understand</h4>
+
+            <ul>
+              <li>
+                <p>
+                  Lots of methods, most of the time are unneeded (like
+                  componentDidMount and componentWillUnmount)
+                </p>
+              </li>
+
+              <li>
+                <p>Lots of bugs from lack of understanding of the lifecycle</p>
+              </li>
+
+              <li>
+                <p>Can’t split up easily</p>
+              </li>
+            </ul>
+
+            <h4>Classes are hard to understand</h4>
+
+            <ul>
+              <li>
+                <p>`this` keyword doesn’t always make sense (in JS)</p>
+              </li>
+
+              <li>
+                <p>
+                  Classes encourage patterns (OOP) which don’t always work well
+                  in React, and become hard to optimise
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  React components are usually thought of as functions (just the
+                  render() part)
+                </p>
+              </li>
+            </ul>
+          </Notes>
+          <Heading size={1}>Why hooks?</Heading>
           <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
+            <ListItem>Code reuse</ListItem>
+            <ListItem>React's lifecycle is hard to understand</ListItem>
+            <ListItem>Classes are hard to understand</ListItem>
           </List>
         </Slide>
-        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
+        <Slide>
+          <Heading size={1}>When to use Hooks?</Heading>
+        </Slide>
+        <Slide>
+          <Notes>
+            <h1>Classes aren’t going to be removed from React</h1>
+
+            <h1>Somethings (1% of cases) hooks can’t cover yet</h1>
+
+            <h1>
+              I’m going to try and use them as much as possible, as I think they
+              are better option.
+            </h1>
+
+            <pre>
+              <code>* No requirement to use them though</code>
+            </pre>
+          </Notes>
+          <Heading size={1}>When to use Hooks?</Heading>
+          <Heading size={2}>Whenever you want</Heading>
+        </Slide>
+        <Slide>
+          <Notes>
+            Classes aren't going away, so there isn't any need to rewrite
+          </Notes>
+          <Heading size={1}>DON’T REWRITE EXISTING CODE</Heading>
+          <p>
+            (Unless you <em>really really</em> want to.)
+          </p>
+        </Slide>
+        <Slide>
+          <Heading size={2}>Demo time</Heading>
         </Slide>
       </Deck>
     );
