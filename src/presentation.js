@@ -2,39 +2,62 @@
 import React from 'react';
 
 // Import Spectacle Core tags
-import {
-  BlockQuote,
-  Notes,
-  Cite,
-  Deck,
-  Heading,
-  ListItem,
-  List,
-  Quote,
-  Slide,
-  Text,
-  MarkdownSlides,
-  Magic,
-} from 'spectacle';
+import { Notes, Deck, Heading, ListItem, List, Slide } from 'spectacle';
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
-
 // Require CSS
 require('normalize.css');
 
-const theme = createTheme(
+// Original default theme
+// const theme = createTheme(
+//   {
+//     primary: 'white',
+//     secondary: '#1F2022',
+//     tertiary: '#03A9FC',
+//     quaternary: '#CECECE',
+//   },
+//   {
+//     primary: 'Montserrat',
+//     secondary: 'Helvetica',
+//   },
+// );
+
+// solarised dark theme
+const initialTheme = createTheme(
   {
-    primary: 'white',
-    secondary: '#1F2022',
-    tertiary: '#03A9FC',
-    quaternary: '#CECECE',
+    primary: '#042B35',
+    secondary: '#D2A03E',
+    tertiary: '#FD853D',
+    quartenary: '#A7A7A7',
   },
   {
     primary: 'Montserrat',
     secondary: 'Helvetica',
   },
 );
+
+export const theme = {
+  ...initialTheme,
+  screen: {
+    ...initialTheme.screen,
+    components: {
+      ...initialTheme.screen.components,
+      code: {
+        ...initialTheme.screen.components.code,
+        color: initialTheme.screen.colors.quartenary,
+      },
+      text: {
+        ...initialTheme.screen.components.text,
+        color: initialTheme.screen.colors.quartenary,
+      },
+      link: {
+        ...initialTheme.screen.components.link,
+        color: initialTheme.screen.colors.secondary,
+      },
+    },
+  },
+};
 
 export default class Presentation extends React.Component {
   render() {
