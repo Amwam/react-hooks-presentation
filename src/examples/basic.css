@@ -1,0 +1,16 @@
+:local(.code) {
+  width: 50%;
+  font-size: 1rem !important;
+  flex: 1;
+  width: 115% !important;
+  min-width: inherit !important;
+}
+
+:local(.preview) {
+  width: 50%;
+  flex: 1;
+}
+
+:local(.container) {
+  display: flex;
+}

@@ -4,24 +4,27 @@ import React from 'react';
 // Import Spectacle Core tags
 import { Notes, Deck, Heading, ListItem, List, Slide } from 'spectacle';
 
+import { BasicDemo } from './examples/basic/slide';
+import { MultipleDemo } from './examples/multiple/slide';
+
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
 // Require CSS
 require('normalize.css');
 
 // Original default theme
-// const theme = createTheme(
-//   {
-//     primary: 'white',
-//     secondary: '#1F2022',
-//     tertiary: '#03A9FC',
-//     quaternary: '#CECECE',
-//   },
-//   {
-//     primary: 'Montserrat',
-//     secondary: 'Helvetica',
-//   },
-// );
+const theme = createTheme(
+  {
+    primary: 'white',
+    secondary: '#1F2022',
+    tertiary: '#03A9FC',
+    quaternary: '#CECECE',
+  },
+  {
+    primary: 'Montserrat',
+    secondary: 'Helvetica',
+  },
+);
 
 // solarised dark theme
 const initialTheme = createTheme(
@@ -37,27 +40,27 @@ const initialTheme = createTheme(
   },
 );
 
-export const theme = {
-  ...initialTheme,
-  screen: {
-    ...initialTheme.screen,
-    components: {
-      ...initialTheme.screen.components,
-      code: {
-        ...initialTheme.screen.components.code,
-        color: initialTheme.screen.colors.quartenary,
-      },
-      text: {
-        ...initialTheme.screen.components.text,
-        color: initialTheme.screen.colors.quartenary,
-      },
-      link: {
-        ...initialTheme.screen.components.link,
-        color: initialTheme.screen.colors.secondary,
-      },
-    },
-  },
-};
+// export const theme = {
+//   ...initialTheme,
+//   screen: {
+//     ...initialTheme.screen,
+//     components: {
+//       ...initialTheme.screen.components,
+//       code: {
+//         ...initialTheme.screen.components.code,
+//         color: initialTheme.screen.colors.quartenary,
+//       },
+//       text: {
+//         ...initialTheme.screen.components.text,
+//         color: initialTheme.screen.colors.quartenary,
+//       },
+//       link: {
+//         ...initialTheme.screen.components.link,
+//         color: initialTheme.screen.colors.secondary,
+//       },
+//     },
+//   },
+// };
 
 export default class Presentation extends React.Component {
   render() {
@@ -179,6 +182,8 @@ export default class Presentation extends React.Component {
         <Slide>
           <Heading size={2}>Demo time</Heading>
         </Slide>
+        <BasicDemo />
+        <MultipleDemo />
       </Deck>
     );
   }
