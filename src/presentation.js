@@ -1,3 +1,5 @@
+/* eslint import/no-webpack-loader-syntax: off */
+
 // Import React
 import React from 'react';
 
@@ -263,6 +265,33 @@ const [buttonText, setButtonText] = React.useState('My Button);`}
         <Slide align="center flex-start">
           <Heading size={2}>With TypeScript</Heading>
           <img src={require('./examples/typescript/screenshot.png')} />
+        </Slide>
+        <Slide>
+          <Heading size={1}>Redux</Heading>
+        </Slide>
+        <Slide align="center center">
+          <Heading size={1}>When?</Heading>
+          <List>
+            <ListItem>
+              <strong>Rarely</strong>
+            </ListItem>
+            <ListItem>Sharing common state across the page</ListItem>
+            <ListItem>Usually passing Props is enough</ListItem>
+            <ListItem>Only a few pages make sense (eg Widgets/Search)</ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <CodePane
+            lang="jsx"
+            source={require('!raw-loader!./examples/redux/redux.tsx')}
+          />
+        </Slide>
+        <Slide>
+          <Heading size={1}>React Hooks</Heading>
+          <Heading size={3}>Comming Feb 4th 2019</Heading>
+          <Heading size={6}>
+            <em>(ish)</em>
+          </Heading>
         </Slide>
       </Deck>
     );
