@@ -260,6 +260,10 @@ const [buttonText, setButtonText] = React.useState('My Button);`}
             </ListItem>
           </List>
         </Slide>
+        <Slide align="center flex-start">
+          <Heading size={2}>With TypeScript</Heading>
+          <img src={require('./examples/typescript/screenshot.png')} />
+        </Slide>
       </Deck>
     );
   }

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "prettier": "^1.16.1",
+    "prettier": "^1.16.2",
     "raw-loader": "^1.0.0",
     "react": "^16.8.0-alpha.1",
     "react-dom": "^16.8.0-alpha.1",
@@ -25,5 +25,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@types/react": "^16.7.22",
+    "@types/react-dom": "^16.0.11"
+  }
 }
