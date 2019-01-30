@@ -233,6 +233,33 @@ const [buttonText, setButtonText] = React.useState('My Button);`}
         </Slide>
         <UseEffectDemo />
         <CustomHookDemo />
+        <Slide>
+          <Heading size={2}>Other hooks</Heading>
+          <a href="https://reactjs.org/docs/hooks-reference.html">
+            https://reactjs.org/docs/hooks-reference.html
+          </a>
+        </Slide>
+        <Slide>
+          <Heading size={1}>Rules</Heading>
+          <List>
+            <ListItem>
+              Only Call Hooks at the Top Level
+              <ListItem>Keep the same order each time</ListItem>
+              <ListItem>
+                Don't use conditionals with hooks <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<code>if</code>, <code>for</code>
+                , <code>switch</code>...etc)
+              </ListItem>
+            </ListItem>
+
+            <ListItem>Only Call Hooks from React Functions</ListItem>
+            <ListItem>
+              Custom hooks start with <code>use</code>
+              <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g.
+              <code>useMousePointer()</code>
+            </ListItem>
+          </List>
+        </Slide>
       </Deck>
     );
   }
