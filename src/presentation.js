@@ -2,10 +2,20 @@
 import React from 'react';
 
 // Import Spectacle Core tags
-import { Notes, Deck, Heading, ListItem, List, Slide } from 'spectacle';
+import {
+  Notes,
+  Deck,
+  Heading,
+  ListItem,
+  List,
+  Slide,
+  CodePane,
+} from 'spectacle';
 
 import { BasicDemo } from './examples/basic/slide';
 import { MultipleDemo } from './examples/multiple/slide';
+import { UseEffectDemo } from './examples/useEffect/slide';
+import { CustomHookDemo } from './examples/customHook/slide';
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
@@ -149,6 +159,21 @@ export default class Presentation extends React.Component {
             <ListItem>Classes are hard to understand</ListItem>
           </List>
         </Slide>
+        <Slide align="center flex-start">
+          <video
+            preload="auto"
+            autoplay={true}
+            controls={true}
+            loop={true}
+            type="video/mp4"
+            height={window.height / 2}
+          >
+            <source
+              src="https://video.twimg.com/tweet_video/DqsCilOU0AAoS7P.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </Slide>
         <Slide>
           <Heading size={1}>When to use Hooks?</Heading>
         </Slide>
@@ -182,8 +207,32 @@ export default class Presentation extends React.Component {
         <Slide>
           <Heading size={2}>Demo time</Heading>
         </Slide>
+
         <BasicDemo />
         <MultipleDemo />
+        <Slide>
+          <Heading size={2}>Multiple useState calls</Heading>
+          <p>
+            Each key you would normally have in state, becomes a single{' '}
+            <code>usesState</code> call
+          </p>
+          <CodePane
+            language="jsx"
+            source={`this.state = {
+  buttonPressed: true,
+  buttonText: 'My Button'
+}`}
+          />
+          Becomes:
+          <CodePane
+            language="jsx"
+            source={`
+const [buttonPressed, setButtonPressed] = React.useState(true);
+const [buttonText, setButtonText] = React.useState('My Button);`}
+          />
+        </Slide>
+        <UseEffectDemo />
+        <CustomHookDemo />
       </Deck>
     );
   }

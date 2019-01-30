@@ -4,8 +4,7 @@ import { OldCode } from './old.js';
 import { NewCode } from './new.js';
 import styles from '../basic.css';
 /* eslint import/no-webpack-loader-syntax: off */
-// const NewCode = require('raw-loader!./new.js');
-export function BasicDemo() {
+export function UseEffectDemo() {
   const [showNew, setShowNew] = React.useState(false);
 
   return (
